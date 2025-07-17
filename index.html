@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ăn gì hôm nay?</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#e91e63">
+  <link rel="icon" href="icon-192.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+  <div class="app">
+    <h1>🍽️ Hôm nay ăn gì?</h1>
+    <select id="category" onchange="capNhatDanhSach()">
+      <option value="all">Tất cả</option>
+      <option value="com">Cơm</option>
+      <option value="bun">Bún</option>
+      <option value="pho">Phở</option>
+      <option value="mi">Mì</option>
+      <option value="lau">Lẩu</option>
+      <option value="nuong">Nướng</option>
+      <option value="an-vat">Ăn vặt</option>
+      <option value="nuoc">Nước uống</option>
+      <option value="sup">Súp</option>
+      <option value="chay">Đồ chay</option>
+      <option value="trang-mieng">Tráng miệng</option>
+      <option value="do-kho">Đồ khô</option>
+      <option value="do-chien">Đồ chiên</option>
+    </select>
+    <button onclick="randomMonAn()">🎲 Random món</button>
+    <div class="them-mon">
+      <input type="text" id="monMoi" placeholder="Nhập tên món..." />
+      <button onclick="themMon()">➕ Thêm món</button>
+      <button onclick="hienDanhSachDaThem()">📋 Danh sách đã thêm</button>
+    </div>
+  </div>
+  <script src="app.js"></script>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('/service-worker.js')
+          .then(function (registration) {
+            console.log('Service Worker registered with scope:', registration.scope);
+          }, function (err) {
+            console.log('Service Worker registration failed:', err);
+          });
+      });
+    }
+  </script>
+</body>
+
+</html>

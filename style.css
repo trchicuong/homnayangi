@@ -1,0 +1,136 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fbc2eb, #a1c4fd);
+  background-size: 400% 400%;
+  animation: gradientShift 10s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.app {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  transition: transform 0.3s ease;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.app:hover {
+  transform: translate(-50%, -50%) scale(1.02);
+}
+
+h1 {
+  font-size: 32px;
+  color: #e91e63;
+  margin-bottom: 24px;
+}
+
+select, button {
+  padding: 14px 18px;
+  margin: 12px 0;
+  border-radius: 10px;
+  border: none;
+  font-size: 17px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: 0.3s ease;
+}
+
+select {
+  background: #f3f3f3;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+select:focus {
+  box-shadow: 0 0 6px #e91e63aa;
+  outline: none;
+}
+
+button {
+  background-color: #e91e63;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+button:hover {
+  background-color: #d81b60;
+  transform: scale(1.03);
+}
+
+@media (max-width: 480px) {
+  .app {
+    padding: 24px;
+    border-radius: 18px;
+    width: 90%;
+    max-width: 340px;
+  }
+
+  h1 {
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+
+  select, button {
+    font-size: 15px;
+    padding: 12px 14px;
+  }
+}
+
+@media (max-width: 360px) {
+  .app {
+    padding: 20px;
+    max-width: 300px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  select, button {
+    font-size: 14px;
+  }
+}
+
+.them-mon {
+  margin-top: 20px;
+}
+
+.them-mon input {
+  padding: 12px;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.them-mon button {
+  background-color: #4caf50;
+  color: white;
+  font-weight: bold;
+}
+.them-mon button:hover {
+  background-color: #388e3c;
+}
